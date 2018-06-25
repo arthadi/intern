@@ -1,0 +1,240 @@
+.header-block{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background-color: @background_Color;
+  max-width: 1340px;
+  padding: 0 30px;
+  min-height: 127px;
+  margin: auto;
+  @media (max-width: 730px) {
+    flex-direction: column;
+  }
+  @media (max-width: 520px) {
+    padding: 0 25px;
+  }
+}
+
+.header-block::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 99.4%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border: 190px solid transparent;
+  border-bottom: 63px solid @background_Color;
+  transform: rotate(180deg);
+  z-index: 1;
+  @media (max-width: 950px) {
+    border: 130px solid transparent;
+    border-bottom: 43px solid @background_Color;
+  }
+  @media (max-width: 650px) {
+    border: 90px solid transparent;
+    border-bottom: 35px solid @background_Color;
+  }
+}
+
+.header-block__main-menu {
+  display: flex;
+  align-items: center;
+  flex-basis: 100% / 3;
+  @media (max-width: 730px) {
+    order: 2;
+    flex-basis: 100%;
+    align-items: start;
+    justify-content: center;
+  }
+
+    .header-block__main-menu-list {
+      display: flex;
+      align-items: center;
+      @media (max-width: 950px) {
+        flex-direction: column;
+        align-items: start;
+        margin: 15px 0;
+      }
+      @media (max-width: 730px) {
+        flex-direction: row;
+        margin: 15px 0 20px 0;
+      }
+
+      .main-menu-list__item:last-child {
+        @media (max-width: 730px) {
+          margin-right: 0;
+        }
+      }
+
+        .main-menu-list__item{
+          margin-right: 24px;
+
+              .main-menu__link {
+                 font-family: "Playfair Display Italic";
+                 font-style: normal;
+                 font-weight: 400;
+                 font-size: 18px;
+                 @media (max-width: 950px) {
+                   display: flex;
+                    margin: 3px 0;
+                 }
+               }
+        }
+    }
+}
+
+.main-menu__link:link {
+  background-color: transparent;
+  color: @font_Color;
+}
+
+.main-menu__link:visited {
+  background-color: transparent;
+  color: @font_Color;
+}
+
+.main-menu__link:hover {
+  background-color: transparent;
+  color: @gold_Color;
+}
+
+.main-menu__link:focus {
+  background-color: transparent;
+  color: @font_Color;
+}
+
+.main-menu__link:active {
+  background-color: transparent;
+  color: @font_Color;
+}
+
+.header-block__main-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100% / 3;
+  @media (max-width: 730px) {
+    order: 3;
+    flex-basis: 100%;
+    margin-bottom: 15px;
+  }
+
+    .main-logo__link{
+      font-family:"Krinkes Decor PERSONAL USE";
+      font-style:normal;
+      font-weight:400;
+      font-size: 72px;
+      color: @font_Color;
+    }
+}
+
+.main-logo__link:link {
+  background-color: transparent;
+  color: @font_Color;
+}
+
+.main-logo__link:visited {
+  background-color: transparent;
+  color: @font_Color;
+}
+
+.main-logo__link:hover {
+  background-color: transparent;
+  color: @gold_Color;
+  transition: all .3s;
+}
+
+.main-logo__link:focus {
+  background-color: transparent;
+  color: @font_Color;
+}
+
+.main-logo__link:active {
+  background-color: transparent;
+  color: @font_Color;
+}
+
+.header-block__main-links{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-basis: 100% / 3;
+  @media (max-width: 950px) {
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+  }
+  @media (max-width: 730px) {
+    order: 1;
+    flex-basis: 100%;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+  }
+
+    .header-block__social-network{
+      display: flex;
+      align-items: center;
+      margin-right: 34px;
+      @media (max-width: 980px) {
+        margin-right: 14px;
+      }
+      @media (max-width: 950px) {
+        margin: 0 0 15px 0;
+      }
+      @media (max-width: 730px) {
+        margin: 15px 25px 15px -20px;
+      }
+      @media (max-width: 340px) {
+        margin: 15px 20px 15px -20px;
+      }
+
+
+
+            .social-network__link {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 34px;
+              height: 34px;
+              border-radius: 17px;
+              margin-right: 13px;
+              @media (max-width: 950px) {
+                margin: 0 0 0 13px;
+              }
+        }
+    }
+}
+
+.social-network__link:link {
+  background: transparent;
+  border: 2px solid @gold_Color;
+  color: @gold_Color;
+}
+
+.social-network__link:visited {
+  background: transparent;
+  border: 2px solid @gold_Color;
+  color: @gold_Color;
+}
+
+.social-network__link:hover {
+  background: transparent;
+  border-radius: 17px;
+  border: 2px solid @select_font_Color;
+  color: @select_font_Color;
+}
+
+.social-network__link:focus {
+  background: transparent;
+  border: 2px solid @gold_Color;
+  color: @gold_Color;
+}
+
+.social-network__link:active {
+  background: transparent;
+  border: 2px solid @gold_Color;
+  color: @gold_Color;
+}

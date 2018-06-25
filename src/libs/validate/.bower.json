@@ -1,0 +1,14 @@
+{
+  "name": "validate",
+  "homepage": "https://github.com/cferdinandi/validate",
+  "version": "2.2.0",
+  "_release": "2.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.2.0",
+    "commit": "3a2c44c0b745c7d05b7cc0008ede2e2242a24562"
+  },
+  "_source": "https://github.com/cferdinandi/validate.git",
+  "_target": "^2.2.0",
+  "_originalSource": "https://github.com/cferdinandi/validate.git"
+}
