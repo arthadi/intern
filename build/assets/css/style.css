@@ -697,6 +697,9 @@ img {
   background-color: #7f7a75;
   margin: auto;
 }
+.main .main-slaider .slaid {
+  display: flex;
+}
 .page-shablon {
   display: none;
   position: absolute;
