@@ -2124,10 +2124,13 @@ img {
   justify-content: flex-end;
   -ms-flex-line-pack: center;
   align-content: center;
-  opacity: 0;
+  opacity: 1;
   background-color: rgba(0, 0, 0, 0.4);
   -webkit-transition: all .3s;
   transition: all .3s;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 .item-inner_hidden:hover {
   opacity: 1;
@@ -2135,6 +2138,8 @@ img {
 .hand-picked_button {
   margin-top: 20%;
   margin-bottom: 13%;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 .cross {
   display: -webkit-box;
