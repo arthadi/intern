@@ -203,7 +203,7 @@ img {
   top: 99.4%;
   right: 0;
   left: 0;
-  margin: auto;
+  margin: -1px auto;
   border: 190px solid transparent;
   border-bottom: 63px solid #ffffff;
   -webkit-transform: rotate(180deg);
@@ -2124,7 +2124,7 @@ img {
   justify-content: flex-end;
   -ms-flex-line-pack: center;
   align-content: center;
-  opacity: 1;
+  opacity: 0;
   background-color: rgba(0, 0, 0, 0.4);
   -webkit-transition: all .3s;
   transition: all .3s;
