@@ -4,6 +4,7 @@ const projectName = 'internship'
 //MODULES REQUIRE
 /****************************************************************************************************/
 import gulp from 'gulp'
+import combineMq from 'gulp-combine-mq'
 import less from 'gulp-less'
 import postcss from 'gulp-postcss'
 import csso from 'postcss-csso'
@@ -11,7 +12,7 @@ import customProperties from 'postcss-custom-properties'
 import apply from 'postcss-apply'
 import postcssNesting from 'postcss-nesting'
 import postcssNested from 'postcss-nested'
-import autoprefixer from 'autoprefixer'
+import autoprefixer from 'gulp-autoprefixer'
 import postcssImport from 'postcss-import'
 import mqp from 'css-mqpacker'
 import uglify from 'gulp-uglify'
@@ -90,28 +91,34 @@ gulp.task('less', () => {
         .pipe(plumber())
         .pipe(gulpIf(isDevelopment, sourcemaps.init()))
         .pipe(less())
+        .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false}))
+        .pipe(gulpIf(!isDevelopment,combineMq({
+            beautify: false
+        })))
         .pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
-        .pipe(gulpIf(isDevelopment, gulp.dest(cms.modx.css), gulp.dest('src/css')))
-        //.pipe(gulpIf(!isDevelopment, gulp.dest('src/css')))
+        .pipe(gulpIf(isDevelopment, gulp.dest(cms.modx.css)))
+        .pipe(gulpIf(!isDevelopment, gulp.dest('src/css')))
 })
 /****************************************************************************************************/
 //CSS task
 /****************************************************************************************************/
 gulp.task('css', () => {
   let processors = [
-    postcssImport({path: ['src/css']}),
-    customProperties,
-    apply,
-    postcssNesting,
-    postcssNested,
-    autoprefixer({cascade: false}),
-    mqp({sort: true})
+   // postcssImport({path: ['src/css']}),
+    //customProperties,
+    //apply,
+    //postcssNesting,
+    //postcssNested,
+   // autoprefixer({cascade: false}),
+    //mqp({sort: true})
   ]
   return gulp.src('src/css/style.css')
     .pipe(plumber())
     //.pipe(gulpIf(isDevelopment, sourcemaps.init()))
-    .pipe(postcss(processors))
-    .pipe(gulpIf(!isDevelopment, postcss([csso({restructure: false, debug: true})])))
+    //.pipe(postcss(processors))
+    //.pipe(gulpIf(!isDevelopment, postcss([csso({restructure: false, debug: true})])))
     //.pipe(gulpIf(isDevelopment, sourcemaps.write()))
     .pipe(gulpIf(!isDevelopment, gulp.dest(cms.modx.css)))
 })
@@ -164,7 +171,7 @@ gulp.task('libs', () => {
 
 gulp.task('mylibs', () => {
   return gulp.src('src/libs/mylibs/**/*.*')
-    .pipe(flatten({includeParents: 1}))
+    //.pipe(flatten({includeParents: 1}))
     .pipe(gulp.dest(cms.modx.libs))
 })
 /****************************************************************************************************/
@@ -283,5 +290,5 @@ gulp.task('serve', () => {
 /****************************************************************************************************/
 //GLOBAL TASKS
 /****************************************************************************************************/
-gulp.task('build', gulp.series(gulp.parallel('less', 'html', 'css', 'js', 'libs', 'mylibs', 'favicon', 'fonts', 'img', 'svg:icons'), 'svg'))
+gulp.task('build', gulp.series(gulp.parallel('less','html', 'css', 'js', 'libs', 'mylibs', 'favicon', 'fonts', 'img', 'svg:icons'), 'svg'))
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')))

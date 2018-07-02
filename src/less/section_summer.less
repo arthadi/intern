@@ -1,0 +1,123 @@
+.summer-collection__items{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0 0 15px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid @hover_select_background_Color;
+  @media (max-width: 1023px) {
+    padding:  15px ~"calc(19.5% - 30px)" 0 ~"calc(19.5% - 15px)";
+  }
+  @media (max-width: 800px) {
+    padding:  15px ~"calc(15% - 30px)" 0 ~"calc(15% - 15px)";
+  }
+  @media (max-width: 700px) {
+    padding:  15px 0 0 15px;
+  }
+  @media (max-width: 428px) {
+    padding:  15px ~"calc(14% - 30px)" 0 ~"calc(14% - 15px)";
+  }
+  @media (max-width: 360px) {
+    padding:  15px 0 0 15px;
+  }
+
+}
+.summer-collection__item{
+  display: flex;
+  justify-content: center;
+  word-wrap: break-word;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  width: ~"calc(25% - 15px)";
+  position: relative;
+  @media (max-width: 1023px) {
+    width: ~"calc(50% - 15px)";
+  }
+  @media (max-width: 500px) {
+    width: 304px;
+  }
+  @media (max-width: 428px) {
+    width: ~"calc(100% - 15px)";
+  }
+}
+.button-summer-collection{
+  display: flex;
+  position: absolute;
+  align-self: flex-end;
+  justify-content: center;
+  z-index: 10;
+  width: 80%;
+
+}
+.button-cross{
+  display: flex;
+  align-self: center;
+  background: @background_Color;
+  height: 10px;
+  width: 2px;
+  position: relative;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.button-cross::after{
+  content: "";
+  background: @background_Color;
+  height: 2px;
+  width: 10px;
+  position: absolute;
+  left: -4px;
+  top: 4px;
+}
+
+.addcart__button{
+  display: flex;
+  align-content: center;
+  color: @background_Color;
+  font-family: "Lato-Regular";
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px 10px 10px 0;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.summer-collection__item::after{
+  content: "";
+  border-bottom: 42px solid @black_Color;
+  width: 120px;
+  height: 0;
+  border-right: 40px solid transparent;
+  border-left: 40px solid transparent;
+  position: absolute;
+  bottom: 0;
+}
+.summer-collection__inner{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  background-color: @hover_item_Color;
+  transition: .3s;
+  z-index: 3;
+}
+.summer-collection__inner::after{
+  content: "";
+  border-bottom: 42px solid @hover_Color;
+  width: 120px;
+  height: 0;
+  border-right: 40px solid transparent;
+  border-left: 40px solid transparent;
+  position: absolute;
+  bottom: 0;
+}
+.summer-collection__item:hover .summer-collection__inner{
+  opacity: 1;
+}
+
+.summer-collection__image{
+  display: block;
+}

@@ -8,8 +8,7 @@
 //   console.log(target)
 // })
 
-
-
+$(document).ready(function(){
 
     $.fn.selectbox = function () {
 
@@ -51,6 +50,18 @@
             curentHeight = 0;
         });
     });
-};
+    };
 
-$('.select-box').selectbox();
+    $('.select-box').selectbox();
+
+    $('.js-slider').slick({
+        path_bulet: "assets/libs/slick/svg/romb.svg#romb",
+        viewBox_bulet: "0 0 36 36",
+        dots: true,
+        infinite: true,
+        speed: 700,
+        slidesToShow: 1,
+        adaptiveHeight: true
+    });
+});
+

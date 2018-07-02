@@ -1,0 +1,31 @@
+.main-content{
+  width: 100%;
+  min-height: 20px;
+  background-color: @background_Color;
+  position: relative;
+}
+
+.main{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  max-width: 1340px;
+  padding: 0 30px;
+  margin: auto;
+  @media (max-width: 520px) {
+    padding: 0 25px;
+  }
+}
+@import "promo_block";
+
+.section__block{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+@import "main_title";
+@import "section_handPicked";
+@import "section_summer";
+@import "section_our-brand";
+@import "section_customers_says";

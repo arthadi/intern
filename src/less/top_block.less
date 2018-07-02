@@ -5,11 +5,12 @@
   min-height: 200px;
   top: -200px;
   z-index: 10;
-
-    .sing-in__button {
-      font-size: 11px;
-    }
 }
+
+.sing-in__button {
+  font-size: 11px;
+}
+
 
 .main-top-block {
   display: flex;
@@ -20,80 +21,44 @@
   padding: 0 30px;
   min-height: 40px;
   margin: auto;
-
   @media (max-width: 520px) {
     flex-direction: column-reverse;
     align-items: center;
     padding: 25px 25px;
   }
+}
 
-      .phone-top-block__link {
-        display: flex;
-        color: @font_Color;
-        align-items: center;
+.phone-top-block__link {
+  display: flex;
+  color: @font_Color;
+  align-items: center;
+  z-index: 5;
+  @media (max-width: 520px) {
+      padding-top: 15px;
+    }
+  }
+.phone-top-block__link:link {
+  background-color: transparent;
+  color: @font_Color;
+}
 
-        @media (max-width: 520px) {
-          padding-top: 15px;
-        }
+.phone-top-block__link:visited {
+  background-color: transparent;
+  color: @font_Color;
+}
+.phone-top-block__link:hover {
+  background-color: transparent;
+  color: @hover_Color;
+}
 
-          .main-top-block__icon {
-            font-size: 12px;
-            margin-right: 18px;
+.phone-top-block__link:focus {
+  background-color: transparent;
+  color: @font_Color;
+}
 
-            @media (max-width: 570px) {
-              margin-right: 10px;
-            }
-          }
-          .fon-top-block__phone-number{
-            font-size: 11.5px;
-          }
-      }
-
-      .nav-top-block {
-        display: flex;
-        align-items: center;
-
-        .nav-top-block__nav-list {
-          display: flex;
-          flex-direction: row;
-          font-family: "Lato-Regular";
-          font-style: normal;
-          font-weight: 400;
-          color: @font_Color;
-          text-transform: uppercase;
-
-            .nav-top-block__list-item {
-              display: flex;
-              align-items: center;
-              padding: 0 33px 0 33px;
-              border-right: 1px solid @font_Color;
-
-              @media (max-width: 700px) {
-                padding: 0 15px 0 15px;
-              }
-              @media (max-width: 570px) {
-                padding: 0 10px 0 10px;
-              }
-
-                .nav-top-block__link {
-                  font-size: 11px;
-                }
-
-            }
-
-          .nav-top-block__list-item:last-child {
-            padding-right: 0;
-            border-right: 0;
-          }
-          .nav-top-block__list-item:first-child {
-            padding-left: 0;
-
-            @media (max-width: 380px) {
-              display: none;
-            }
-          }
-        }
-      }
+.phone-top-block__link:active {
+  background-color: transparent;
+  color: @font_Color;
 }
 
 .phone-top-block__link:link, .nav-top-block__link:link {
@@ -101,21 +66,81 @@
   color: @font_Color;
 }
 
-.phone-top-block__link:visited, .nav-top-block__link:visited {
+  .main-top-block__icon {
+    font-size: 12px;
+    margin-right: 18px;
+    @media (max-width: 570px) {
+      margin-right: 10px;
+    }
+  }
+
+  .fon-top-block__phone-number{
+    font-family: "Lato-Regular";
+    font-style: normal;
+    font-weight: 400;
+    color: inherit;
+    font-size: 11.5px;
+  }
+
+.nav-top-block {
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.nav-top-block__nav-list {
+  display: flex;
+  flex-direction: row;
+  font-family: "Lato-Regular";
+  font-style: normal;
+  font-weight: 400;
+  color: @font_Color;
+  text-transform: uppercase;
+}
+
+.nav-top-block__list-item {
+  display: flex;
+  align-items: center;
+  padding: 0 33px 0 33px;
+  border-right: 1px solid @font_Color;
+
+  @media (max-width: 700px) {
+    padding: 0 15px 0 15px;
+  }
+  @media (max-width: 570px) {
+    padding: 0 10px 0 10px;
+  }
+}
+.nav-top-block__link {
+  font-size: 11px;
+}
+
+.nav-top-block__list-item:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+.nav-top-block__list-item:first-child {
+  padding-left: 0;
+  @media (max-width: 380px) {
+    display: none;
+  }
+}
+
+.nav-top-block__link:visited {
   background-color: transparent;
   color: @font_Color;
 }
-.phone-top-block__link:hover, .nav-top-block__link:hover {
+.nav-top-block__link:hover {
   background-color: transparent;
   color: @hover_Color;
 }
 
-.phone-top-block__link:focus, .nav-top-block__link:focus {
+.nav-top-block__link:focus {
   background-color: transparent;
   color: @font_Color;
 }
 
-.phone-top-block__link:active, .nav-top-block__link:active {
+.nav-top-block__link:active {
   background-color: transparent;
   color: @font_Color;
 }
