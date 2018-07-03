@@ -2384,6 +2384,9 @@ img {
     margin-right: 30px;
   }
 }
+.customers-says_block {
+  margin-bottom: 0;
+}
 .customers-says__cotent {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2434,6 +2437,7 @@ img {
   margin: 30px 0 42px 0;
 }
 .customers-says__text {
+  display: block;
   max-width: 290px;
   font-family: "Playfair Display Italic";
   font-size: 18px;
@@ -2469,6 +2473,30 @@ img {
 .lady__img,
 .man__img {
   display: block;
+}
+.footer {
+  width: 100%;
+  min-height: 20px;
+  background-color: #000;
+  position: relative;
+}
+.footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 1340px;
+  padding: 0 30px;
+  margin: auto;
+}
+@media (max-width: 520px) {
+  .footer-content {
+    padding: 0 25px;
+  }
 }
 .page-shablon {
   display: none;
