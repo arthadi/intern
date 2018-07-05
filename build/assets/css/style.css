@@ -2842,6 +2842,7 @@ img {
 @media (max-width: 950px) {
   .footer_social-network_link {
     margin-left: 0;
+    margin-right: 15px;
   }
 }
 .footer_social-network_link:link {
