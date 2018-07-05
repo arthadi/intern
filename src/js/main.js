@@ -52,6 +52,13 @@ $(document).ready(function(){
     });
     };
 
+    $('.button-cross__footer').on('click', function() {
+        let block = $(this).parent().next();
+        console.log(block);
+        $(block).slideToggle();
+    });
+
+
     $('.select-box').selectbox();
 
     $('.js-slider').slick({

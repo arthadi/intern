@@ -8,6 +8,14 @@
   width: 100%;
   background-color: @gold_Color;
   position: relative;
+  @media (max-width: 950px){
+    justify-content: space-around;
+  }
+  @media (max-width: 600px){
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+  }
 }
 .tringl_block{
   margin: 0;
@@ -18,9 +26,14 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  align-content: flex-end;
   position: relative;
   z-index: 1;
-  margin: 30px 0 40px 0;
+  margin: 30px 30px 40px 0;
+  @media (max-width: 950px){
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .customers-says-man__block{
   display: flex;
@@ -28,7 +41,11 @@
   align-items: flex-end;
   position: relative;
   z-index: 1;
-  margin: 30px 0 42px 0;
+  margin: 30px 0 40px 30px;
+  @media (max-width: 950px){
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
 }
 .customers-says__text{
   display: block;
@@ -38,9 +55,13 @@
   font-style:normal;
   font-weight:400;
   color: @background_Color;
+  position: relative;
 }
 .customers-says-man__text{
   text-align: right;
+}
+.customers-says-lady__text{
+  text-align: left;
 }
 .customers-says-man__author{
   font-family:"Playfair Display Bold Italic";
@@ -65,5 +86,61 @@
   color: @background_slaider_Color;
 }
 .lady__img, .man__img {
-  display: block;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  transition: all .3s;
+
+  @media (max-width: 1200px){
+    width: 200px;
+  }
+  @media (max-width: 950px){
+    width: auto;
+  }
+  @media (max-width: 800px){
+    width: 230px;
+  }
+  @media (max-width: 600px){
+    width: auto;
+  }
 }
+@supports (shape-outside: polygon(100% 0, 0 0, 100% 41%)){
+  .sheip{
+    display: block;
+    width: 70%;
+    height: 100px;
+    float: right;
+    shape-outside: polygon(100% 0, 0 0, 100% 41%);
+    @media (max-width: 600px){
+      display: none;
+    }
+  }
+  .sheip__man{
+    display: block;
+    width: 70%;
+    height: 100px;
+    float: left;
+    shape-outside: polygon(100% 0, 0 0, 0 41%);
+    @media (max-width: 600px){
+      display: none;
+    }
+  }
+}
+.customers-says__name{
+  margin-bottom: 10px;
+}
+//.sheip{
+//  display: block;
+//  width: 70%;
+//  height: 100px;
+//  float: right;
+//  shape-outside: polygon(100% 0, 0 0, 100% 41%);
+//}
+
+//.sheip__man{
+//  display: block;
+//  width: 70%;
+//  height: 100px;
+//  float: left;
+//  shape-outside: polygon(100% 0, 0 0, 0 39%);
+//}
