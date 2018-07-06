@@ -2566,6 +2566,20 @@ img {
     width: auto;
   }
 }
+.sheip {
+  display: none;
+  width: 70%;
+  height: 100px;
+  float: right;
+  shape-outside: polygon(100% 0, 0 0, 100% 41%);
+}
+.sheip__man {
+  display: none;
+  width: 70%;
+  height: 100px;
+  float: left;
+  shape-outside: polygon(100% 0, 0 0, 0 39%);
+}
 @supports (shape-outside: polygon(100% 0, 0 0, 100% 41%)) {
   .sheip {
     display: block;
