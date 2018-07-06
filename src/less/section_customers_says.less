@@ -111,6 +111,15 @@
   height: 100px;
   float: right;
 }
+@supports (shape-outside: polygon(100% 0, 0 0, 100% 41%)) {
+  .sheip {
+    display: block;
+    shape-outside: polygon(100% 0, 0 0, 100% 41%);
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}
 
 .sheip__man{
   display: none;
@@ -118,19 +127,11 @@
   height: 100px;
   float: left;
 }
-
-@supports (shape-outside: polygon(100% 0, 0 0, 100% 41%)){
-  .sheip{
-    display: block;
-    shape-outside: polygon(100% 0, 0 0, 100% 41%);
-    @media (max-width: 600px){
-      display: none;
-    }
-  }
-  .sheip__man{
+  @supports (shape-outside: polygon(100% 0, 0 0, 100% 41%)){
+  .sheip__man {
     display: block;
     shape-outside: polygon(100% 0, 0 0, 0 41%);
-    @media (max-width: 600px){
+    @media (max-width: 600px) {
       display: none;
     }
   }
