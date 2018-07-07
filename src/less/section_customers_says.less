@@ -110,14 +110,14 @@
   width: 70%;
   height: 100px;
   float: right;
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 @supports (shape-outside: polygon(100% 0, 0 0, 100% 41%)) {
   .sheip {
     display: block;
     shape-outside: polygon(100% 0, 0 0, 100% 41%);
-    @media (max-width: 600px) {
-      display: none;
-    }
   }
 }
 
@@ -126,14 +126,14 @@
   width: 70%;
   height: 100px;
   float: left;
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
   @supports (shape-outside: polygon(100% 0, 0 0, 100% 41%)){
   .sheip__man {
     display: block;
     shape-outside: polygon(100% 0, 0 0, 0 41%);
-    @media (max-width: 600px) {
-      display: none;
-    }
   }
 }
 .customers-says__name{
