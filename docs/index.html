@@ -60,7 +60,12 @@
 </div>
 <div class="header-block">
     <nav class="header-block__main-menu">
-        <ul class="header-block__main-menu-list">
+        <button class="button__hide-menu form__button js-hide-menu" aria-label="hidden-button">
+            <svg class="hide__menu js-hide-menu icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <use xlink:href="assets/img/svg/svg-symbols.svg#bars"></use>
+            </svg>
+        </button>
+        <ul class="js-menu__main header-block__main-menu-list">
             <li class="main-menu-list__item">
                 <a href="#" class="main-menu__link link">
                     Home
@@ -689,6 +694,7 @@
 
 <script src="assets/libs/jquery/jquery.min.js"></script>
 <script src="assets/libs/slick/js_min/slick.min.js"></script>
+<script src="assets/libs/svg4everybody/svg4everybody.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
