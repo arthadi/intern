@@ -15,10 +15,11 @@ $(document).ready(function(){
         this.each( () => {
 
         const $selectBox = $(this);
-        const $selectMenuBox = $selectBox.find($('.select-menu-box'));
-        const $option = $selectBox.find($('.option'));
-        const $selectBox_Value_Tag = $selectBox.find($('.select-box__value-tag'));
-        const $arrow_select = $selectBox.find($('.arrow-select-link'));
+        const $selectMenuBox = $selectBox.children().last();
+        const $option = $selectMenuBox.children();
+        const $selectBox_Value_Tag = $selectBox.children().eq(1);
+        const $arrow_select = $selectBox.children().eq(0);
+        const $arrow = $arrow_select.children();
         let curentHeight = $selectMenuBox.outerHeight();
 
         $arrow_select.on("click", (e) => {
@@ -28,13 +29,13 @@ $(document).ready(function(){
                 let height_menu = $selectMenuBox.css({"height":"auto"}).outerHeight ();
                 $selectMenuBox.css ({"height":"0"});
                 $selectMenuBox.animate({"height": height_menu}, 300);
-                $arrow_select.css({transition: ".2s", transform: "rotate(180deg)"});
+                $arrow.css({transition: ".2s", transform: "rotate(180deg)"});
                 curentHeight = height_menu;
                 return false;
             }
             else {
                 $selectMenuBox.animate ({"height": 0}, 300);
-                $arrow_select.css({transition: ".2s", transform: "rotate(0deg)"});
+                $arrow.css({transition: ".2s", transform: "rotate(0deg)"});
                 curentHeight = 0;
                 return false;
             }
@@ -46,16 +47,29 @@ $(document).ready(function(){
             e.preventDefault();
             $selectMenuBox.animate({"height": 0}, 300);
             $selectBox_Value_Tag.text(textOption);
-            $arrow_select.css({transition: ".2s", transform: "rotate(0deg)"});
+            $arrow.css({transition: ".2s", transform: "rotate(0deg)"});
             curentHeight = 0;
         });
     });
     };
 
-    $('.button-cross__footer').on('click', function() {
-        let block = $(this).parent().next();
-        console.log(block);
+    $('.footer-item-title__block').on('click', function() {
+        let block = $(this).next();
+        let cross = $(this).find($('.cross_footer'));
+
         $(block).slideToggle();
+
+        setTimeout(function () {
+
+        if (block.css('display') === 'none') {
+            cross.css('background-color', '#000000');
+        }
+
+        },500);
+
+        if (block.css('display') === 'block') {
+            cross.css('background-color', 'transparent');
+        }
     });
 
 
@@ -79,7 +93,7 @@ $(function () {
     $button_hidden.on("click", function () {
 
         if ($menu_main.height() === 0) {
-            var height_menu = $menu_main.css({"height":"auto"}).outerHeight();
+            let height_menu = $menu_main.css({"height":"auto"}).outerHeight();
             $menu_main.css({"height":"0"});
             $menu_main.animate({"height": height_menu}, 500);
             return false;
