@@ -754,6 +754,15 @@ img {
     margin: 0 0 0 10px;
   }
 }
+.select {
+  width: 90px;
+  position: relative;
+  height: 35px;
+  background-color: #393939;
+  color: #ffffff;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
 .select-box {
   width: 90px;
   position: relative;
